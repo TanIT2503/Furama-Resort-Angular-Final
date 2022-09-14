@@ -1,74 +1,40 @@
 {
   "customers": [
     {
-      "customerBirthday": "2022-08-29",
+      "customerBirthday": "2022-09-15",
       "customerGender": "Nam",
       "customerAddress": "23 hai phong",
-      "customerType": {
-        "id": 1,
-        "customerTypeName": "Platinum"
-      },
-      "customerName": "Đặng Công Tấn",
-      "customerPhone": "+84968328344",
-      "customerIdentify": "23412434",
-      "customerEmail": "tanisme25@gmail.com",
-      "id": 1
-    },
-    {
-      "customerBirthday": "2022-09-20",
-      "customerGender": "Nam",
-      "customerAddress": "652 Doe Meadow Drive",
       "customerType": {
         "id": 2,
         "customerTypeName": "Diamond"
       },
-      "customerName": "William F. Lawler",
-      "customerPhone": "13015098324",
-      "customerIdentify": "23412434",
-      "customerEmail": "congtan2503@gmail.com",
-      "id": 2
+      "customerName": "Đặng Công Tấn",
+      "customerPhone": "+84968328344",
+      "customerIdentify": "4234234",
+      "customerEmail": "tanisme25@gmail.com",
+      "id": 1
     }
   ],
   "services": [
     {
-      "id": 1,
-      "serviceName": "jjfasdf",
-      "serviceArea": "23",
-      "servicePrice": "20000",
-      "serviceMaxPeople": "5",
-      "rendType": {
-        "id": 3,
-        "rentTypeName": "Tháng"
-      },
-      "serviceStandardRoom": "Vip",
-      "serviceDescription": "a",
-      "servicePoolArea": "45",
-      "serviceFloor": "3",
-      "serviceImage": "https://pix10.agoda.net/hotelImages/10953/-1/0e899b3e41830a0f7088b7b99c0d14cb.jpg?ca=9&ce=1&s=1024x768",
-      "serviceType": {
-        "id": 2,
-        "serviceTypeName": "House"
-      }
-    },
-    {
-      "id": 2,
       "serviceName": "dasf",
-      "serviceArea": "23",
+      "serviceArea": "45",
       "servicePrice": "2354",
       "serviceMaxPeople": "6",
       "rendType": {
-        "id": 4,
-        "rentTypeName": "Năm"
+        "id": 2,
+        "rentTypeName": "Tuần"
       },
-      "serviceStandardRoom": "Không có",
+      "serviceStandardRoom": "Vip",
       "serviceDescription": "dá",
-      "servicePoolArea": "234",
+      "servicePoolArea": "0",
       "serviceFloor": "3",
       "serviceImage": "https://reviewvilla.vn/wp-content/uploads/2022/02/Furama-Resort-Danang-5.png",
       "serviceType": {
-        "id": 2,
-        "serviceTypeName": "House"
-      }
+        "id": 1,
+        "serviceTypeName": "Villa"
+      },
+      "id": 1
     }
   ],
   "contracts": [

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {SFuramaService} from "../../services/s-furama.service";
 import {Service} from "../../models/service";
 import {FormControl, FormGroup} from "@angular/forms";
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 
 
 @Component({
@@ -11,7 +10,7 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
   styleUrls: ['./service-list.component.scss']
 })
 export class ServiceListComponent implements OnInit {
-  formServiceDelete: FormGroup;
+  searchText;
   constructor(private furamaService: SFuramaService) {
   }
   config: any;
