@@ -1,0 +1,195 @@
+<div class="grid wide Form__Edit">
+  <form [formGroup]="formServiceEdit"  (ngSubmit)="updateService(id)">
+    <div class="row d-flex">
+      <h3 class="Edit__Service">Thêm dịch vụ</h3>
+      <div class="col-md-6 Form__Col">
+        <mdb-form-control>
+          <input class="form-control" formControlName="serviceName" id="serviceName" mdbInput
+                 type="text"/>
+          <label class="form-label" for="serviceName" mdbLabel>Tên dịch vụ</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('serviceName')?.valid && (formServiceEdit.get('serviceName')?.touched||formServiceEdit.get('serviceName')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('serviceName').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('serviceName').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input class="form-control" formControlName="serviceArea" id="area" mdbInput type="text"/>
+          <label class="form-label" for="area" mdbLabel>Diện tích sử dụng</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('serviceArea')?.valid && (formServiceEdit.get('serviceArea')?.touched||formServiceEdit.get('serviceArea')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('serviceArea').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('serviceArea').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input class="form-control" formControlName="servicePrice" id="cost" mdbInput type="text"/>
+          <label class="form-label" for="cost" mdbLabel>Chi phí thuê</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('servicePrice')?.valid && (formServiceEdit.get('servicePrice')?.touched||formServiceEdit.get('servicePrice')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('servicePrice').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('servicePrice').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input class="form-control" formControlName="serviceMaxPeople" id="maxPeople" mdbInput
+                 type="text"/>
+          <label class="form-label" for="maxPeople" mdbLabel>Số người tối đa</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('serviceMaxPeople')?.valid && (formServiceEdit.get('serviceMaxPeople')?.touched||formServiceEdit.get('serviceMaxPeople')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('serviceMaxPeople').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('serviceMaxPeople').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <select class="form-control" [compareWith]="compareWithRentType" formControlName="rendType" id="rentType" mdbInput
+                  type="text">
+            <option *ngFor="let rentType of rentType" [ngValue]="rentType">{{rentType.rentTypeName}}</option>
+          </select>
+          <label class="form-label" for="maxPeople" mdbLabel>Kiểu thuê</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('rendType')?.valid && (formServiceEdit.get('rendType')?.touched||formServiceEdit.get('rendType')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('rendType').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('rendType').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 Form__Col">
+        <mdb-form-control>
+          <input class="form-control" formControlName="serviceStandardRoom" id="standardRoom" mdbInput
+                 type="text"/>
+          <label class="form-label" for="standardRoom" mdbLabel>Tiêu chuẩn phòng</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('serviceStandardRoom')?.valid && (formServiceEdit.get('serviceStandardRoom')?.touched||formServiceEdit.get('serviceStandardRoom')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('serviceStandardRoom').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('serviceStandardRoom').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input class="form-control" formControlName="serviceDescription" id="other" mdbInput
+                 type="text"/>
+          <label class="form-label" for="other" mdbLabel>Tiện nghi khác</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('serviceDescription')?.valid && (formServiceEdit.get('serviceDescription')?.touched||formServiceEdit.get('serviceDescription')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('serviceDescription').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('serviceDescription').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input class="form-control" formControlName="servicePoolArea" id="poolArea" mdbInput
+                 type="text"/>
+          <label class="form-label" for="other" mdbLabel>Diện tích hồ bơi</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('servicePoolArea')?.valid && (formServiceEdit.get('servicePoolArea')?.touched||formServiceEdit.get('servicePoolArea')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('servicePoolArea').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('servicePoolArea').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input class="form-control" formControlName="serviceFloor" id="floor" mdbInput type="text"/>
+          <label class="form-label" for="floor" mdbLabel>Số tầng</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('serviceFloor')?.valid && (formServiceEdit.get('serviceFloor')?.touched||formServiceEdit.get('serviceFloor')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('serviceFloor').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('serviceFloor').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input class="form-control" formControlName="serviceImage" id="image" mdbInput type="text"/>
+          <label class="form-label" for="floor" mdbLabel>Ảnh</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('serviceImage')?.valid && (formServiceEdit.get('serviceImage')?.touched||formServiceEdit.get('serviceImage')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('serviceImage').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('serviceImage').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <select [compareWith]="compareWithServiceType" class="form-control" formControlName="serviceType" id="serviceType" mdbInput
+                  type="text">
+            <option *ngFor="let serviceType of serviceType" [ngValue]="serviceType" >{{serviceType.serviceTypeName}}</option>
+          </select>
+          <label class="form-label" for="maxPeople" mdbLabel>Kiểu dịch vụ</label>
+        </mdb-form-control>
+        <div
+          *ngIf="!formServiceEdit.get('serviceType')?.valid && (formServiceEdit.get('serviceType')?.touched||formServiceEdit.get('serviceType')?.dirty)">
+          <div [hidden]="!formServiceEdit.get('serviceType').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+          <div [hidden]="!formServiceEdit.get('serviceType').errors.pattern">
+            <small class="form__text">
+              Chưa đúng định dạng.</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12" style="justify-content: center; display: flex">
+        <div style="padding: 20px">
+          <button class="matter-button-contained custom__btn" [disabled]="!formServiceEdit.valid">Xác nhận</button>
+        </div>
+        <div style="padding: 20px">
+          <button class="matter-button-contained custom__btn" routerLink="/service/list">Huỷ</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

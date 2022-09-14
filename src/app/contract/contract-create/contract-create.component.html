@@ -1,0 +1,95 @@
+<div class="contract__container grid wide">
+  <form [formGroup]="formContractCreate" (ngSubmit)="submit()">
+    <div class="row d-flex">
+      <h3 class="edit__contract">Thêm mới dịch vụ</h3>
+      <div class="col-md-6 contract__col">
+        <mdb-form-control>
+          <input mdbInput type="date" id="contractStartDate" class="form-control" formControlName="contractStartDate" />
+          <label mdbLabel class="form-label" for="contractStartDate">Ngày bắt đầu</label>
+        </mdb-form-control>
+        <div *ngIf="formContractCreate.get('contractStartDate')?.invalid && (formContractCreate.get('contractStartDate')?.touched||formContractCreate.get('contractStartDate')?.dirty)">
+          <div [hidden]="!formContractCreate.get('contractStartDate').errors.required">
+            <small class="form-text" style="color: red; font-style: italic" >
+              Bạn chưa chọn ngày bắt đầu.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input mdbInput type="date" id="contractEndDate" class="form-control" formControlName="contractEndDate" />
+          <label mdbLabel class="form-label" for="contractEndDate">Ngày kết thúc</label>
+        </mdb-form-control>
+        <div *ngIf="formContractCreate.get('contractEndDate')?.invalid && (formContractCreate.get('contractEndDate')?.touched||formContractCreate.get('contractEndDate')?.dirty)">
+          <div [hidden]="!formContractCreate.get('contractEndDate').errors.required">
+            <small class="form-text" style="color: red; font-style: italic" >
+              Bạn chưa chọn ngày kết thúc.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input mdbInput type="text" id="contractDeposit" class="form-control" formControlName="contractDeposit" />
+          <label mdbLabel class="form-label" for="contractDeposit">Tiền cọc</label>
+        </mdb-form-control>
+        <div *ngIf="formContractCreate.get('contractDeposit')?.invalid && (formContractCreate.get('contractDeposit')?.touched||formContractCreate.get('contractDeposit')?.dirty)">
+          <div [hidden]="!formContractCreate.get('contractDeposit').errors.required">
+            <small class="form-text" style="color: red; font-style: italic" >
+              Bạn chưa nhập tiền cọc.</small>
+          </div>
+        </div>
+        <div *ngIf="formContractCreate.get('contractDeposit')?.invalid && (formContractCreate.get('contractDeposit')?.touched||formContractCreate.get('contractDeposit')?.dirty)">
+          <div [hidden]="!formContractCreate.get('contractDeposit').errors.pattern">
+            <small class="form-text" style="color: red; font-style: italic" >
+              Nhập tiền cọc phải là kiểu số.</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 contract__col">
+        <mdb-form-control>
+          <input mdbInput type="text" id="contractTotalCost" class="form-control" formControlName="contractTotalCost" />
+          <label mdbLabel class="form-label" for="contractTotalCost">Tổng thanh toán</label>
+        </mdb-form-control>
+        <div *ngIf="formContractCreate.get('contractTotalCost')?.invalid && (formContractCreate.get('contractTotalCost')?.touched||formContractCreate.get('contractTotalCost')?.dirty)">
+          <div [hidden]="!formContractCreate.get('contractTotalCost').errors.required">
+            <small class="form-text" style="color: red; font-style: italic" >
+              Bạn chưa nhập tổng tiền.</small>
+          </div>
+        </div>
+        <div *ngIf="formContractCreate.get('contractTotalCost')?.invalid && (formContractCreate.get('contractTotalCost')?.touched||formContractCreate.get('contractTotalCost')?.dirty)">
+          <div [hidden]="!formContractCreate.get('contractTotalCost').errors.pattern">
+            <small class="form-text" style="color: red; font-style: italic" >
+              Nhập tổng tiền phải là kiểu số.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <select mdbInput type="text" id="customer1" class="form-control" formControlName="contractCustomer" >
+            <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.customerName}}</option>
+          </select>
+          <label mdbLabel class="form-label" for="customer1">Khách hàng</label>
+        </mdb-form-control>
+        <div *ngIf="formContractCreate.get('contractCustomer')?.invalid && (formContractCreate.get('contractCustomer')?.touched||formContractCreate.get('contractCustomer')?.dirty)">
+          <div [hidden]="!formContractCreate.get('contractCustomer').errors.required">
+            <small class="form-text" style="color: red; font-style: italic" >
+              Bạn chưa chọn khách hàng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <select mdbInput type="text" id="service1" class="form-control" formControlName="contractService" >
+            <option *ngFor="let service of services" [ngValue]="service">{{service.serviceName}}</option>
+          </select>
+          <label mdbLabel class="form-label" for="service1">Dịch vụ</label>
+        </mdb-form-control>
+        <div *ngIf="formContractCreate.get('contractService')?.invalid && (formContractCreate.get('contractService')?.touched||formContractCreate.get('contractService')?.dirty)">
+          <div [hidden]="!formContractCreate.get('contractService').errors.required">
+            <small class="form-text" style="color: red; font-style: italic" >
+              Bạn chưa chọn dịch vụ.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12" style="justify-content: center; display: flex">
+      <div style="padding: 20px">
+        <button class="matter-button-contained custom__btn" [disabled]="!formContractCreate.valid">Xác nhận</button>
+      </div>
+      <div style="padding: 20px">
+        <button class="matter-button-contained custom__btn" routerLink="/contract.list">Huỷ</button>
+      </div>
+    </div>
+  </form>
+</div>

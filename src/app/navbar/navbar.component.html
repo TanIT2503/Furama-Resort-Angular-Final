@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="grid wide">
+    <div class="navbar__container">
+      <img class="navbar-brand navbar__img" src="assets/logo.png" />
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <i class="fa-solid fa-bars"></i>
+        </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="">Giới thiệu <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/service/list">Dịch vụ</a>
+          </li>
+          <li mdbDropdown class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              id="navbarDropdownMenuLink"
+              role="button"
+              mdbDropdownToggle
+              aria-expanded="false"
+            >
+              Quản lý
+            </a>
+            <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" routerLink="/customer/list">Khách Hàng</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/contract/list">Hợp dồng</a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <div class="input-group">
+            <input type="search" class="form-control search__text" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button id="search-button" type="button" class="btn btn-primary">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>

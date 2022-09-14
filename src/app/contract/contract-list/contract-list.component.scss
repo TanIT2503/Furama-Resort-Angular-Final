@@ -1,0 +1,40 @@
+.contract__container {
+  background-color: white;
+  margin-top: 40px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  filter: drop-shadow(2px 2px 8px var(--shadow-color));
+}
+th,
+td {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  border: #d5d5d5;
+}
+
+tbody td {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  border: #d5d5d5;
+}
+
+.black.box {
+  --shadow-color: hsl(0deg 0% 0% / 1);
+}
+
+.pagination__container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text__container-contract{
+  margin-top: 20px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+.text__container-contract a{
+  color: #fff;
+}

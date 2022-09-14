@@ -1,0 +1,171 @@
+{
+  "customers": [
+    {
+      "customerBirthday": "2022-08-29",
+      "customerGender": "Nam",
+      "customerAddress": "23 hai phong",
+      "customerType": {
+        "id": 1,
+        "customerTypeName": "Platinum"
+      },
+      "customerName": "Đặng Công Tấn",
+      "customerPhone": "+84968328344",
+      "customerIdentify": "23412434",
+      "customerEmail": "tanisme25@gmail.com",
+      "id": 1
+    },
+    {
+      "customerBirthday": "2022-09-20",
+      "customerGender": "Nam",
+      "customerAddress": "652 Doe Meadow Drive",
+      "customerType": {
+        "id": 2,
+        "customerTypeName": "Diamond"
+      },
+      "customerName": "William F. Lawler",
+      "customerPhone": "13015098324",
+      "customerIdentify": "23412434",
+      "customerEmail": "congtan2503@gmail.com",
+      "id": 2
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "serviceName": "jjfasdf",
+      "serviceArea": "23",
+      "servicePrice": "20000",
+      "serviceMaxPeople": "5",
+      "rendType": {
+        "id": 3,
+        "rentTypeName": "Tháng"
+      },
+      "serviceStandardRoom": "Vip",
+      "serviceDescription": "a",
+      "servicePoolArea": "45",
+      "serviceFloor": "3",
+      "serviceImage": "https://pix10.agoda.net/hotelImages/10953/-1/0e899b3e41830a0f7088b7b99c0d14cb.jpg?ca=9&ce=1&s=1024x768",
+      "serviceType": {
+        "id": 2,
+        "serviceTypeName": "House"
+      }
+    },
+    {
+      "id": 2,
+      "serviceName": "dasf",
+      "serviceArea": "23",
+      "servicePrice": "2354",
+      "serviceMaxPeople": "6",
+      "rendType": {
+        "id": 4,
+        "rentTypeName": "Năm"
+      },
+      "serviceStandardRoom": "Không có",
+      "serviceDescription": "dá",
+      "servicePoolArea": "234",
+      "serviceFloor": "3",
+      "serviceImage": "https://reviewvilla.vn/wp-content/uploads/2022/02/Furama-Resort-Danang-5.png",
+      "serviceType": {
+        "id": 2,
+        "serviceTypeName": "House"
+      }
+    }
+  ],
+  "contracts": [
+    {
+      "contractStartDate": "2022-09-07",
+      "contractEndDate": "2022-09-19",
+      "contractTotalCost": "12343423",
+      "contractDeposit": "12345",
+      "contractCustomer": {
+        "customerBirthday": "2022-08-29",
+        "customerGender": "Nam",
+        "customerAddress": "23 hai phong",
+        "customerType": {
+          "id": 1,
+          "customerTypeName": "Platinum"
+        },
+        "customerName": "Đặng Công Tấn",
+        "customerPhone": "+84968328344",
+        "customerIdentify": "23412434",
+        "customerEmail": "tanisme25@gmail.com",
+        "id": 1
+      },
+      "contractService": {
+        "serviceName": "dasf",
+        "serviceArea": "45",
+        "servicePrice": "20000",
+        "serviceMaxPeople": "5",
+        "rendType": {
+          "id": 2,
+          "rentTypeName": "Tuần"
+        },
+        "serviceStandardRoom": "Vip",
+        "serviceDescription": "dá",
+        "servicePoolArea": "0",
+        "serviceFloor": "3",
+        "serviceImage": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F-370x239.jpg",
+        "serviceType": {
+          "id": 2,
+          "serviceTypeName": "House"
+        },
+        "id": 1
+      },
+      "id": 1
+    }
+  ],
+  "customer-type": [
+    {
+      "id": 1,
+      "customerTypeName": "Platinum"
+    },
+    {
+      "id": 2,
+      "customerTypeName": "Diamond"
+    },
+    {
+      "id": 3,
+      "customerTypeName": "Gold"
+    },
+    {
+      "id": 4,
+      "customerTypeName": "Sliver"
+    },
+    {
+      "id": 5,
+      "customerTypeName": "Member"
+    }
+  ],
+  "service-type": [
+    {
+      "id": 1,
+      "serviceTypeName": "Villa"
+    },
+    {
+      "id": 2,
+      "serviceTypeName": "House"
+    },
+    {
+      "id": 3,
+      "serviceTypeName": "Room"
+    }
+  ],
+  "rent-type": [
+    {
+      "id": 1,
+      "rentTypeName": "Ngày"
+    },
+    {
+      "id": 2,
+      "rentTypeName": "Tuần"
+    },
+    {
+      "id": 3,
+      "rentTypeName": "Tháng"
+    },
+    {
+      "id": 4,
+      "rentTypeName": "Năm"
+    }
+  ]
+}

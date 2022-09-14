@@ -1,0 +1,66 @@
+#Body__card {
+  margin-top: 50px;
+  padding: 0 100px;
+
+}
+
+
+.btn__card {
+  margin: 20px;
+  background-color: #0680b8;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+td {
+  width: 400px;
+}
+
+/*  */
+.services__container {
+  margin-top: 40px
+}
+
+.service__item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.pagination__container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text__container-service{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+.text__container-service a{
+  color: #fff;
+}
+
+//.img-fluid{
+//  max-width: 100%;
+//}
+
+#myCard {
+  max-height: 500px;
+}
+
+#testID {
+  max-width: 100%;
+}

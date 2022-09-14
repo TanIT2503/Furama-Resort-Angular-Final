@@ -1,0 +1,46 @@
+.about__container {
+  background-color: #fff;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.about__text {
+  max-width: 70%;
+  text-align: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.text__header {
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: bold;
+}
+
+.text__container-about p {
+  font-size: 15px;
+}
+
+.text__container-about {
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.image__about {
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.image__about img {
+  border-radius: 10px;
+}
+
+.img-fluid {
+  margin-top: 10px;
+}

@@ -1,0 +1,120 @@
+<div class="grid wide Form__Edit">
+  <form [formGroup]="formCustomerEdit"  (ngSubmit)="updateCustomer(id)">
+    <div class="row d-flex">
+      <h3 class="Edit__Customer">Chỉnh sửa thông tin khách hàng</h3>
+      <div class="col-md-6 Form__Col">
+        <mdb-form-control>
+          <input mdbInput type="text" id="name" class="form-control" formControlName="customerName"/>
+          <label mdbLabel class="form-label" for="name">Họ và tên</label>
+        </mdb-form-control>
+        <div *ngIf="!formCustomerEdit.get('customerName')?.valid && (formCustomerEdit.get('customerName')?.touched||formCustomerEdit.get('customerName')?.dirty)">
+          <div [hidden]="!formCustomerEdit.get('customerName').errors.required">
+            <small class="form__text">
+              Họ và tên không được để trống.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input mdbInput type="date" id="birthday" class="form-control" formControlName="customerBirthday"/>
+          <label mdbLabel class="form-label" for="birthday">Ngày sinh</label>
+        </mdb-form-control>
+        <div *ngIf="!formCustomerEdit.get('customerBirthday')?.valid && (formCustomerEdit.get('customerBirthday')?.touched||formCustomerEdit.get('customerBirthday')?.dirty)">
+          <div [hidden]="!formCustomerEdit.get('customerBirthday').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+        </div>
+        <div class="form-control Gender">
+          <label>Giới tính</label>
+          <label class="matter-radio radio__gender">
+            <input type="radio" value="Nam" name="customerGender" formControlName="customerGender">
+            <span>Nam</span>
+          </label>
+          <label class="matter-radio radio__gender">
+            <input type="radio" value="Nữ" name="customerGender" formControlName="customerGender">
+            <span>Nữ</span>
+          </label>
+          <label class="matter-radio radio__gender" >
+            <input type="radio" value="khác" name="customerGender" formControlName="customerGender">
+            <span>Khác</span>
+          </label>
+        </div>
+        <div *ngIf="!formCustomerEdit.get('customerGender')?.valid && (formCustomerEdit.get('customerGender')?.touched||formCustomerEdit.get('customerGender')?.dirty)">
+          <div [hidden]="!formCustomerEdit.get('customerGender').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input mdbInput type="text" id="cmnd" class="form-control" formControlName="customerIdentify" />
+          <label mdbLabel class="form-label" for="cmnd">CMND/CCCD</label>
+        </mdb-form-control>
+        <div *ngIf="!formCustomerEdit.get('customerIdentify')?.valid && (formCustomerEdit.get('customerIdentify')?.touched||formCustomerEdit.get('customerIdentify')?.dirty)">
+          <div [hidden]="!formCustomerEdit.get('customerIdentify').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 Form__Col">
+        <mdb-form-control>
+          <input mdbInput type="text" id="phone" class="form-control" formControlName="customerPhone"/>
+          <label mdbLabel class="form-label" for="phone">Số điện thoại</label>
+        </mdb-form-control>
+        <div *ngIf="!formCustomerEdit.get('customerPhone')?.valid && (formCustomerEdit.get('customerPhone')?.touched||formCustomerEdit.get('customerPhone')?.dirty)">
+          <div [hidden]="!formCustomerEdit.get('customerPhone').errors.required">
+            <small class="form__text">
+              Số điện thoại không được để trống.</small>
+          </div>
+          <div [hidden]="!formCustomerEdit.get('customerPhone').errors.pattern">
+            <small class="form__text">
+              Số điện thoại chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input mdbInput type="text" id="email" class="form-control" formControlName="customerEmail"/>
+          <label mdbLabel class="form-label" for="email">Email</label>
+        </mdb-form-control>
+        <div *ngIf="!formCustomerEdit.get('customerEmail')?.valid && (formCustomerEdit.get('customerEmail')?.touched||formCustomerEdit.get('customerEmail')?.dirty)">
+          <div [hidden]="!formCustomerEdit.get('customerEmail').errors.required">
+            <small class="form__text">
+              Email không được để trống.</small>
+          </div>
+          <div [hidden]="!formCustomerEdit.get('customerEmail').errors.pattern">
+            <small class="form__text">
+              Email chưa đúng định dạng.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <input mdbInput type="text" id="address" class="form-control" formControlName="customerAddress"/>
+          <label mdbLabel class="form-label" for="address">Địa chỉ</label>
+        </mdb-form-control>
+        <div *ngIf="!formCustomerEdit.get('customerAddress')?.valid && (formCustomerEdit.get('customerAddress')?.touched||formCustomerEdit.get('customerAddress')?.dirty)">
+          <div [hidden]="!formCustomerEdit.get('customerAddress').errors.required">
+            <small class="form__text">Không được để trống.</small>
+          </div>
+        </div>
+        <mdb-form-control>
+          <select mdbInput type="text" [compareWith]="compareWithCustomerType" id="customerType" class="form-control" formControlName="customerType">
+            <option value="Platinum" *ngFor="let customerType of customerType" [ngValue]="customerType">{{customerType.customerTypeName}}</option>
+          </select>
+          <label mdbLabel class="form-label" for="customerType">Loại khách</label>
+        </mdb-form-control>
+        <div *ngIf="!formCustomerEdit.get('customerType')?.valid && (formCustomerEdit.get('customerType')?.touched||formCustomerEdit.get('customerType')?.dirty)">
+          <div [hidden]="!formCustomerEdit.get('customerType').errors.required">
+            <small class="form__text">
+              Không được để trống.</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12" style="justify-content: center; display: flex">
+        <div style="padding: 20px">
+          <button class="matter-button-contained custom__btn">Xác nhận</button>
+        </div>
+        <div style="padding: 20px">
+          <button class="matter-button-contained custom__btn"  routerLink="/customer/list">Huỷ</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

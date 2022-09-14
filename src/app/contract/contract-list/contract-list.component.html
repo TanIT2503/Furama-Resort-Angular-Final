@@ -1,0 +1,39 @@
+<div class="grid wide contract__container">
+  <div class=" row">
+    <div class="col-md-8 text__container-contract">
+      <h3>Danh Sách Hợp đồng</h3>
+    </div>
+    <div class="col-md-4 text__container-contract">
+      <a class="btn btn-primary" type="button" routerLink="/contract/create"><i class="fa-solid fa-plus"></i></a>
+    </div>
+  </div>
+  <div style="overflow-x:auto">
+    <table class="table table-striped table-hover" id="contractTable">
+      <thead>
+      <tr>
+        <th scope="col">Số hợp đồng</th>
+        <th scope="col">Ngày bất đầu</th>
+        <th scope="col">Ngày kết thúc</th>
+        <th scope="col">Số tiền cọc</th>
+        <th scope="col">Tổng tiền</th>
+        <th scope="col">Khách hàng</th>
+        <th scope="col">Dịch vụ</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contract of contracts | paginate: { itemsPerPage: 5, currentPage: p }">
+        <td>{{contract.id}}</td>
+        <td>{{contract.contractStartDate}}</td>
+        <td>{{contract.contractEndDate}}</td>
+        <td>{{contract.contractDeposit}}</td>
+        <td>{{contract.contractTotalCost}}</td>
+        <td>{{contract.contractCustomer.customerName}}</td>
+        <td>{{contract.contractService.serviceName}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="wide grid pagination__container">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
